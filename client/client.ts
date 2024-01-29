@@ -2,11 +2,6 @@ interface LoginResponse {
   message: string;
 }
 
-interface RegistrationResponse {
-  success: boolean;
-  message: string;
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   const loginButton = document.getElementById('loginButton') as HTMLButtonElement | null;
   loginButton?.addEventListener('click', async () => {
@@ -22,11 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         body: JSON.stringify({ loginUsername, loginPassword }),
       });
-
+      
       if (response.ok) {
         const result = await response.json() as LoginResponse;
         console.log('Login erfolgreich. Nachricht:', result.message);
 
+        console.log('Erfolgreich angemeldet!');
       } else {
         console.error('Fehler beim Login:', response.statusText);
       }
@@ -39,6 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
   registerButton?.addEventListener('click', () => {
     window.location.href = 'register.html';
   });
+
+  const publishLoginButton = document.getElementById('publishLoginButton') as HTMLButtonElement | null;
+  publishLoginButton?.addEventListener('click', () => {
+    window.location.href = 'login.html'; 
+  });
 });
 
-export {LoginResponse }
+export { LoginResponse }

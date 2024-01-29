@@ -14,11 +14,12 @@ export class API {
 
     constructor(app: Express) {
         this.app = app;
-        this.database = new Database(); // Initialisiert eine Datenbankinstanz
-        this.post = new Post(); // Initialisiert eine Instanz der Post-Klasse
-        this.comment = new Comment(); // Initialisiert eine Instanz der Comment-Klasse
-        this.userManagement = new UserManagement(); // Initialisiert eine Instanz der UserManagement-Klasse
+        this.database = new Database(); 
+        this.post = new Post(); 
+        this.comment = new Comment(); 
+        this.userManagement = new UserManagement(); 
 
-        this.app.use(bodyParser.json()); // Verwendet das bodyParser-Middleware, um JSON-Anfragedaten zu verarbeiten
+        this.app.use(bodyParser.json()); 
     }
 }
+
