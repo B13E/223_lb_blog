@@ -1,13 +1,9 @@
 import { Request, Response, Express } from 'express';
 import bodyParser from 'body-parser';
-import * as jwt from 'jsonwebtoken';
-import * as dotenv from 'dotenv';
 import { Database } from '../database/database';
 import { Post } from './publish/blog';
 import { Comment } from './publish/comment';
 import { UserManagement } from './usermanagement'; 
-
-dotenv.config(); // Lädt Umgebungsvariablen aus einer .env-Datei, falls vorhanden
 
 export class API {
     app: Express;

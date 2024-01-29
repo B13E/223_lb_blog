@@ -2,7 +2,7 @@
 // Express wird für die Webserver-Funktionalität verwendet.
 import express, { Express, Request, Response } from 'express'
 import { API } from './api/api'
-import http from 'http'
+import * as http from 'http'
 import { resolve, dirname } from 'path'
 import { Database } from './database/database'
 
